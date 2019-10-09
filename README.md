@@ -147,3 +147,11 @@ small test programs in [`src/index.js`](src/index.js) and then
 see what's happening.  Doing so will help you understand how everything is working.
 
 NOTE: use `CTRL+c` to stop the development web server.
+
+## Step 3: Create a Web UI to Display the Data
+
+After we get the data loaded and modelled in JavaScript,
+we'll need to create a web UI to allow the user to interact
+with the data.
+
+In the coming weeks we'll add more details about how to approach this.
