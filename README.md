@@ -115,3 +115,35 @@ as you work on this code:
 - Using Arrays, specifically: `length`, `push()`, `splice()`, `forEach()`,
   `filter()`, `find()`, `sort()`, `slice()`
 - Working with a `Set`, and converting a `Set` to an `Array` using `Array.from()`
+
+### Debugging in the Browser
+
+To make things easier to work with, all of the JavaScript has
+been separated out into separate files.  Before we can use them
+all together, we need to bundle (i.e., combine) all our JavaScript into a single file.
+
+To do this, we're going to use the [Parcel Bundler](https://en.parceljs.org/).  To use it, run the following command:
+
+```
+npm start
+
+> toronto-traffic-example@1.0.0 start toronto-traffic-example
+> parcel index.html
+
+Server running at http://localhost:1234
+✨  Built in 1.12s.
+```
+
+This will "build" your code, bundling all the scripts together,
+and put everything in the `dist/` folder.  It will also start
+a development web server at [http://localhost:1234](http://localhost:1234).  Open it in your browser.
+
+Whatever code you put in the [`src/index.js`](src/index.js) file
+will get run when the page loads.  Open your `console` and you'll see various things printed there already.
+
+As you implement your functions and objects, you can try writing
+small test programs in [`src/index.js`](src/index.js) and then
+`console.log()` the results and/or use the browsers Debugger to
+see what's happening.  Doing so will help you understand how everything is working.
+
+NOTE: use `CTRL+c` to stop the development web server.
