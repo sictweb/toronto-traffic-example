@@ -1,0 +1,27 @@
+{
+  "name": "toronto-traffic-example",
+  "version": "1.0.0",
+  "description": "Web Programming Example Project - Toronto Traffic Cameras",
+  "scripts": {
+    "test": "mocha test",
+    "test-live": "mocha --watch test",
+    "start": "parcel index.html"
+  },
+  "author": "David Humphrey",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.1"
+  },
+  "dependencies": {
+    "parcel": "^1.12.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sictweb/toronto-traffic-example.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sictweb/toronto-traffic-example/issues"
+  },
+  "homepage": "https://github.com/sictweb/toronto-traffic-example#readme"
+}
