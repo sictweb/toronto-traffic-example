@@ -7,6 +7,8 @@
  */
 function Location(lat, lng) {
   // TODO: make sure both `lat` and `lng` are Numbers
+  this.lat = parseFloat(lat);
+  this.lng = parseFloat(lng);
 }
 
 /**
@@ -16,7 +18,7 @@ function Location(lat, lng) {
  * `(43.643079, -79.381407)`
  */
 Location.prototype.toString = function() {
-  // TODO
+  return `(${this.lat}, ${this.lng})`;
 };
 
 /**
@@ -26,7 +28,7 @@ Location.prototype.toString = function() {
  * `[43.643079, -79.381407]`
  */
 Location.prototype.toArray = function() {
-  // TODO
+  return [this.lat, this.lng];
 };
 
 /**
@@ -34,7 +36,7 @@ Location.prototype.toArray = function() {
  * `lat` and `lng` values, otherwise false.
  */
 Location.compare = function(location1, location2) {
-  // TODO
+  return location1.lat === location2.lat && location1.lng === location2.lng;
 };
 
 module.exports = Location;

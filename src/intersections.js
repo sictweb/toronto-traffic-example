@@ -13,35 +13,56 @@ function Intersections(csv) {
   // TODO: create an array to hold all the intersection `data`. Split the `csv`
   // string into rows and columns, and turn this data into Intersection, Location,
   // and CameraView objects.  Store each parsed Intersection in your `data` array.
+  const data = this.data = [];
 
+  if(csv) {
+    csv = csv.split(/\r?\n/);
+
+    for(let record of csv) {
+      record = record.split(',');
+
+      let id = Number(record[0].replace('Camera', ''));
+      let location = new Location(record[1], record[2]);
+      let mainRoad = record[3];
+      let crossRoad = record[4];
+      let trafficImage = record[5];
+      let cameraViews = new CameraViews(record[6], record[7], record[8], record[9])
+
+      let intersection = new Intersection(id, location, mainRoad, crossRoad, trafficImage, cameraViews);
+      data.push(intersection);
+    }
+  }
 };
 
 /**
  * Returns an `Array`, which is a copy of the `data` array holding all parsed Intersections
  */
 Intersections.prototype.all = function() {
-  // TODO
+  return this.data.slice();
 }
 
 /**
  * Returns a `Number`, which is the number of Intersections in the `data` array
  */
 Intersections.prototype.count = function () {
-  // TODO
+  return this.data.length;
 }
 
 /**
  * Allows adding a new `Intersection` object to the `data` array.
  */
 Intersections.prototype.add = function(intersection) {
-  // TODO
+  this.data.push(intersection);
 };
 
 /**
  * Allows removing the given `Intersection` object from the `data` array.
  */
 Intersections.prototype.remove = function(intersection) {
-  // TODO
+  const idx = this.data.indexOf(intersection);
+  if(idx > -1) {
+    this.data.splice(idx, 1);
+  }
 };
 
 /**
@@ -50,7 +71,9 @@ Intersections.prototype.remove = function(intersection) {
  * information (`lat` and `lng`).
  */
 Intersections.prototype.getByLocation = function(location) {
-  // TODO
+  return this.data.find(intersection =>
+    Location.compare(location, intersection.location)
+  );
 };
 
 /**
@@ -58,7 +81,7 @@ Intersections.prototype.getByLocation = function(location) {
  * `Intersection` object in the `data` array that matches the given `id`.
  */
 Intersections.prototype.getById = function(id) {
-  // TODO
+  return this.data.find(intersection => intersection.id === id);
 };
 
 /**
@@ -70,7 +93,18 @@ Intersections.prototype.getById = function(id) {
  * be a partial match).
  */
 Intersections.prototype.searchByStreet = function(search, exactMatch) {
-  // TODO
+  if(exactMatch) {
+    return this.data.filter(intersection =>
+      intersection.mainRoad === search ||
+      intersection.crossRoad === search
+    );  
+  } else {
+    search = search.toLowerCase();
+    return this.data.filter(intersection =>
+      intersection.mainRoad.toLowerCase().includes(search) ||
+      intersection.crossRoad.toLowerCase().includes(search)
+    );  
+  }
 }
 
 /**
@@ -78,7 +112,13 @@ Intersections.prototype.searchByStreet = function(search, exactMatch) {
  * The `Array` should have no duplicates, and should be sorted.
  */
 Intersections.prototype.streets = function() {
-  // TODO
+  const uniqStreets = new Set();
+  this.data.forEach(intersection => {
+    uniqStreets.add(intersection.mainRoad);
+    uniqStreets.add(intersection.crossRoad);
+  });
+
+  return Array.from(uniqStreets).sort();
 };
 
 module.exports = Intersections;

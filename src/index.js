@@ -12,5 +12,6 @@ const Location = require('./location');
 
 let csvData = loadCSVData();
 if(csvData) {
-  console.log(csvData);
+  const intersections = new Intersections(csvData);
+  console.log(intersections);
 }

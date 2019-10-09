@@ -9,7 +9,12 @@
  * @param {CameraView} cameraViews - the various views of the intersection as a `CameraView` object
  */
 function Intersection(id, location, mainRoad, crossRoad, trafficUrl, cameraViews) {
-  // TODO
+  this.id = id;
+  this.location = location;
+  this.mainRoad = mainRoad;
+  this.crossRoad = crossRoad;
+  this.trafficUrl = trafficUrl;
+  this.cameraViews = cameraViews;
 }
 
 /**
@@ -19,7 +24,7 @@ function Intersection(id, location, mainRoad, crossRoad, trafficUrl, cameraViews
  * `YORK ST / BREMNER BLVD (43.643079, -79.381407)`
  */
 Intersection.prototype.toString = function() {
-  // TODO
+  return `${this.mainRoad} / ${this.crossRoad} ${this.location.toString()}`;
 }
 
 module.exports = Intersection;

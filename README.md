@@ -13,6 +13,8 @@ information, as well as live camera feeds, see:
 
 > The Traffic Camera dataset contains the location and number for every Traffic camera in the City of Toronto. These datasets will be updated within 2 minutes when cameras are added, changed, or removed.
 
+NOTE: a possible solution is available on the [possible-solution branch](https://github.com/sictweb/toronto-traffic-example/tree/possible-solution).
+
 ## Step 1: Setup
 
 Start by [downloading the code for this project as a `.zip` file](https://github.com/sictweb/toronto-traffic-example/archive/master.zip).

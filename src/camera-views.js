@@ -11,7 +11,26 @@
 function CameraViews(north, east, south, west) {
   // TODO: deal with each argument being null/undefined/empty string and
   // only set the property on the object if the value exists.
+  north = north && north.trim();
+  east = east && east.trim();
+  south = south && south.trim();
+  west = west && west.trim();
 
+  if(north && north.length) {
+    this.north = north;
+  }
+
+  if(east && east.length) {
+    this.east = east;
+  }
+
+  if(south && south.length) {
+    this.south = south;
+  }
+
+  if(west && west.length) {
+    this.west = west;
+  }
 }
 
 /**
