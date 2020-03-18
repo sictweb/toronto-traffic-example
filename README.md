@@ -70,3 +70,5 @@ Try following along with the walkthrough, and building the code yourself to prac
 ## Step 4: Possible Solution
 
 When you're finished, you can find one possible solution in the [possible-solution branch](https://github.com/sictweb/toronto-traffic-example/tree/possible-solution).
+
+You can also try an online version at [https://sictweb.github.io/toronto-traffic-example/](https://sictweb.github.io/toronto-traffic-example/).
