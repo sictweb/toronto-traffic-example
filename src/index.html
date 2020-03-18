@@ -4,41 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CSS Example: Toronto Traffic Cameras</title>
-
-    <!-- Load Leaflet's CSS -->
-    <link rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-      crossorigin=""
-    />
-    <!-- Load our CSS -->
-    <link rel="stylesheet" href="styles.css" type="text/css">
   </head>
-
   <body>
-    <header>
-      <h1>Toronto Traffic Cameras</h1>
-    </header>
+    <h1>Toronto Traffic Cameras</h1>
 
-    <div id="app">
-      <nav>
-      </nav>
-      <main>
-        <div id="images" class="hidden">
-          <img id="camera-image">
-          <div id="directions"></div>
-        </div>
-      
-        <div id="map"></div>
-      </main>
-    </div>
-
-    <!-- Load Leaflet's JavaScript -->
-    <script
-      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-      crossorigin="">
-    </script>
     <!-- Load our traffic camera data first -->
     <script src="traffic-cameras.js"></script>
     <!-- Next load our main script, which will use this data -->
